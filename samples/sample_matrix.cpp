@@ -8,7 +8,17 @@
 #include <iostream>
 #include "utmatrix.h"
 //---------------------------------------------------------------------------
-
+/*int main()
+{
+    TVector <int> v(5);
+    cin >> v;
+    v[0] = 10;
+    TVector <int> v1 = v + 2;
+    cout << v << endl;
+    cout << v1 << endl;
+    cout << v * v1 << endl;
+    cout << v1 - v << endl;
+}*/
 void main()
 {
   TMatrix<int> a(5), b(5), c(5);
