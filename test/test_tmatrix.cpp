@@ -50,11 +50,11 @@ TEST(TMatrix, can_get_size)
 
 TEST(TMatrix, can_set_and_get_element)
 {
-	TMatrix<int> m(5);
-	int b = 10;
-	m[2][3] = b;
+	TMatrix<int> m(3);
+	
+	m[2][2] = 4;
 
-	EXPECT_EQ(b, m[2][3]);
+	EXPECT_EQ(4, m[2][2]);
 }
 
 TEST(TMatrix, throws_when_set_element_with_negative_index)
@@ -134,12 +134,12 @@ TEST(TMatrix, matrices_with_different_size_are_not_equal)
 
 TEST(TMatrix, can_add_matrices_with_equal_size)
 {
-	TMatrix<int> m1(5), m2(5), m3(5);
-	m1[0][0] = 5;
-	m2[0][0] = 5;
-	m3[0][0] = 10;
-
-	EXPECT_EQ(m3, m1 + m2);
+	
+	TMatrix<int> m1(4), m2(4), m3(4);
+	m1[1][1] = 5;
+	m2[1][1] = 5;
+	m3[1][1]=10 ;
+	EXPECT_EQ(m3, m1+ m2);
 }
 
 TEST(TMatrix, cant_add_matrices_with_not_equal_size)

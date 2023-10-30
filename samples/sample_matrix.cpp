@@ -18,6 +18,15 @@
     cout << v1 << endl;
     cout << v * v1 << endl;
     cout << v1 - v << endl;
+    cout << "matrix" << endl;
+    TMatrix <int> m(2);
+    cin >> m;
+    TMatrix <int> m1(2);
+    cin >> m1;
+    cout << m << endl;
+    cout << m1 << endl;
+    cout << m + m1 << endl;
+    cout << m - m1 << endl;
 }*/
 void main()
 {
@@ -28,7 +37,7 @@ void main()
   cout << "Тестирование программ поддержки представления треугольных матриц"
     << endl;
   for (i = 0; i < 3; i++)
-    for (j = i; j < 3; j++ )
+    for (j = i; j <3; j++ )
     {
       a[i][j] =  i * 10 + j;
       b[i][j] = (i * 10 + j) * 100;

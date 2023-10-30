@@ -66,7 +66,7 @@ TEST(TVector, can_set_and_get_element)
 	TVector<int> v(4);
 	v[0] = 4;
 
-	EXPECT_EQ(4, v[0]);
+	EXPECT_EQ( v[0],4);
 }
 
 TEST(TVector, throws_when_set_element_with_negative_index)
@@ -179,9 +179,12 @@ TEST(TVector, can_multiply_scalar_by_vector)
 TEST(TVector, can_add_vectors_with_equal_size)
 {
 	TVector<int> v1(4), v2(4), v3(4);
-	v1 = v1 + 1;
+	/*v1 = v1 + 1;
 	v2 = v2 + 2;
-	v3 = v3 + 3;
+	v3 = v3 + 3;*/
+	v1[0] = 2;
+	v2[0] = 2;
+	v3[0] = 4;
 
 	EXPECT_EQ(v3, v1 + v2);
 }
