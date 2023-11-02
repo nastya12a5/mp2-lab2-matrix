@@ -94,7 +94,8 @@ TVector<T>::~TVector()
 template <class T> // доступ
 T& TVector<T>::operator[](int pos)
 {
-	if (pos<0 || pos>=Size ||pos<StartIndex) throw "Wrong index";
+	if (pos-StartIndex<0 || pos-StartIndex >= Size ) { throw "Wrong index"; }
+	
 	return pVector[pos-StartIndex];
 } /*-------------------------------------------------------------------------*/
 
@@ -226,6 +227,7 @@ class TMatrix : public TVector<TVector<T> >
   TMatrix& operator= (const TMatrix &mt);        // присваивание
   TMatrix  operator+ (const TMatrix &mt);        // сложение
   TMatrix  operator- (const TMatrix &mt);        // вычитание
+  TMatrix operator*(const TMatrix& mt);
 
   // ввод / вывод
   friend istream& operator>>(istream &in, TMatrix &mt)
@@ -308,7 +310,23 @@ TMatrix<T> TMatrix<T>::operator-(const TMatrix<T> &mt)
 	
 	return TVector<TVector<T>>::operator-(mt);
 
-} /*-------------------------------------------------------------------------*/
+}template<class T>
+TMatrix<T> TMatrix<T>::operator*(const TMatrix<T>& mt) {
+	if (Size != mt.Size)throw "WRONG_SIZE";
+	if (StartIndex != mt.StartIndex)throw "WRONG_INDEX";
+	TVector<TVector<T>> result_matrix(Size);
+	for (int i = 0; i < Size; i++) {
+		for (int j = 0; j < Size; j++) {
+			for (int k = StartIndex + i; k < StartIndex + j + 1; k++) {
+				result_matrix[i][j] += (*this).pvector[i][k] * mt.pvector[k][j];
+			}
+
+		}
+
+	}
+	return TMatrix(result_matrix);
+}
+/*-------------------------------------------------------------------------*/
 
 // TVector О3 Л2 П4 С6
 // TMatrix О2 Л2 П3 С3
