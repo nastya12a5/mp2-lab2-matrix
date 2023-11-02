@@ -36,8 +36,8 @@ void main()
   setlocale(LC_ALL, "Russian");
   cout << "Тестирование программ поддержки представления треугольных матриц"
     << endl;
-  for (i = 0; i < 3; i++)
-    for (j = i; j <3; j++ )
+  for (i = 0; i < 5; i++)
+    for (j = i; j <5; j++ )
     {
       a[i][j] =  i * 10 + j;
       b[i][j] = (i * 10 + j) * 100;
