@@ -198,12 +198,17 @@ TEST(TVector, cant_add_vectors_with_not_equal_size)
 
 TEST(TVector, can_subtract_vectors_with_equal_size)
 {
-	TVector<int> v1(4), v2(4), v3(4);
-	v1 = v1 + 1;
-	v2 = v2 + 2;
-	v3 = v3 + 3;
+	TVector<int> v(3);
+	v[0] = 1;
+	v[1] = 1;
+	v[2] = 1;
 
-	EXPECT_EQ(v2, v3 - v1);
+	TVector<int> v1(v);
+	v = v - v1;
+	EXPECT_EQ(v[0], 0);
+	EXPECT_EQ(v[1], 0);
+	EXPECT_EQ(v[2], 0);
+
 }
 
 TEST(TVector, cant_subtract_vectors_with_not_equal_size)

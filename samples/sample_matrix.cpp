@@ -48,4 +48,22 @@ void main()
   cout << "Matrix b = " << endl << b << endl;
   cout << "Matrix c = a + b" << endl << c << endl;
 }
+/*void main() {
+    TMatrix<int> m1(3);
+    m1[0][0] = 1; m1[0][1] = 2; m1[0][2] = 3;
+    m1[1][0] = 4; m1[1][1] = 5; m1[1][2] = 6;
+    m1[2][0] = 7; m1[2][1] = 8; m1[2][2] = 9;
+
+    TMatrix<int> m2(3);
+    m2[0][0] = 9; m2[0][1] = 8; m2[0][2] = 7;
+    m2[1][0] = 6; m2[1][1] = 5; m2[1][2] = 4;
+    m2[2][0] = 3; m2[2][1] = 2; m2[2][2] = 1;
+
+    TMatrix<int> result = m1 - m2;
+
+    
+    cout << "Matrix a = " << endl << m1 << endl;
+    cout << "Matrix b = " << endl << m2 << endl;
+    cout << "Matrix c = a + b" << endl << result << endl;
+}*/
 //---------------------------------------------------------------------------
